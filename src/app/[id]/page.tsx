@@ -1,4 +1,5 @@
 import { MovieDetails } from "@/components/MovieDetails/MovieDetails"
+import { headers } from "next/headers"
 import classes from "../page.module.css"
 
 type Props = {
@@ -6,7 +7,11 @@ type Props = {
 }
 
 export default async function Home({ params }: Props) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const headersList = await headers()
+  const protocol = headersList.get("x-forwarded-proto") || "http"
+  const host = headersList.get("host")
+  const baseUrl = `${protocol}://${host}`
+
   const { id } = await params
   const res = await fetch(`${baseUrl}/api/movie?i=${id}`, {
     // cache: "no-store",
