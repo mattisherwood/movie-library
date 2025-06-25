@@ -60,8 +60,8 @@ export const MovieFinder = () => {
 
   return (
     <div className={classes.root}>
-      <div className={clsx(classes.searchHolder, search && classes.active)}>
-        <div className={classes.inputStage}>
+      <div className={clsx(classes.inputStage, search && classes.active)}>
+        <div className={classes.searchHolder}>
           <div className={classes.filterToggle}>
             <button
               className={clsx(
@@ -93,6 +93,11 @@ export const MovieFinder = () => {
           filterYear={filterYear}
           setFilterYear={updateFilterYear}
         />
+        {Array(20)
+          .fill(0)
+          .map((_, index) => (
+            <span key={index} className={classes.bokeh} />
+          ))}
       </div>
 
       {search && (
