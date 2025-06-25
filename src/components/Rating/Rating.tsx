@@ -15,7 +15,7 @@ export const Rating = ({ movieId }: Props) => {
   useEffect(() => {
     const stored = localStorage.getItem(`${LOCAL_STORAGE_KEY}-${movieId}`)
     if (stored) setRating(Number(stored))
-  }, [])
+  }, [movieId])
 
   const handleRating = (value: number) => {
     const newRating = value === rating ? 0 : value
