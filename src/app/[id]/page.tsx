@@ -1,7 +1,11 @@
 import { MovieDetails } from "@/components/MovieDetails/MovieDetails"
 import classes from "../page.module.css"
 
-export default async function Home({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>
+}
+
+export default async function Home({ params }: Props) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
   const { id } = await params
   const res = await fetch(`${baseUrl}/api/movie?i=${id}`, {
