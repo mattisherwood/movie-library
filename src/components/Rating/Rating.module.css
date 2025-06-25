@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  gap: calc(var(--spacing) * 0.5);
+  font-size: 1.5rem;
+}
+
+.star {
+  color: var(--gray);
+  cursor: pointer;
+  transition: color 0.15s ease-in-out;
+}
+
+.star.filled {
+  color: yellow;
+}
+
+.star:hover {
+  color: yellow;
+}

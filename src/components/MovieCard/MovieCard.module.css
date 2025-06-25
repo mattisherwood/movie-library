@@ -1,0 +1,139 @@
+.root {
+  --columns: 1;
+  perspective: 800px;
+  width: calc(
+    100% / var(--columns) - var(--spacing) * 2 * (var(--columns) - 1)
+  );
+  border-radius: var(--borderRadius);
+  max-width: 378px;
+}
+
+@media (min-width: 232px) {
+  .root {
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 425px) {
+  .root {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 820px) {
+  .root {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .root {
+    --columns: 4;
+  }
+}
+
+@media (min-width: 1600px) {
+  .root {
+    --columns: 5;
+  }
+}
+
+.large {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--borderRadius);
+  background: var(--darkGray);
+  transition: background-color 1s ease, transform 0.15s ease;
+  height: 100%;
+  box-shadow: 10px 10px 20px rgba(var(--black-rgb), 0.2);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--borderRadius);
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(var(--white-rgb), 0.2),
+    rgba(var(--white-rgb), 0)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  transition: opacity 1s ease;
+}
+
+.card:hover {
+  background: rgba(var(--darkGray-rgb), 0.8);
+  box-shadow: 20px 20px 40px rgba(var(--black-rgb), 0.2);
+}
+
+.card:hover .image {
+  opacity: 0.8;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  text-decoration: none;
+}
+
+.placeholder {
+  aspect-ratio: 0.66667;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--gray-rgb), 0.2);
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+.rating {
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+  background: rgba(var(--black-rgb), 0.6);
+  border-radius: 90px;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.75);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 0.5);
+  padding: var(--spacing) calc(var(--spacing) * 2);
+}
+
+.title {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  font-weight: 600;
+}
+
+.type::before {
+  vertical-align: middle;
+}
+
+.year {
+  font-weight: 100;
+}

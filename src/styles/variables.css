@@ -1,0 +1,20 @@
+:root {
+  --primary-rgb: 106, 73, 234;
+  --primary: rgb(var(--primary-rgb));
+  --primary-dark-rgb: 74, 41, 202;
+  --primary-dark: rgb(var(--primary-dark-rgb));
+  --white-rgb: 255, 255, 255;
+  --white: rgb(var(--white-rgb));
+  --offWhite-rgb: 234, 234, 234;
+  --offWhite: rgb(var(--offWhite-rgb));
+  --gray-rgb: 125, 125, 125;
+  --gray: rgb(var(--gray-rgb));
+  --darkGray-rgb: 25, 25, 25;
+  --darkGray: rgb(var(--darkGray-rgb));
+  --black-rgb: 0, 0, 0;
+  --black: rgb(var(--black-rgb));
+
+  --spacing: 8px;
+
+  --borderRadius: var(--spacing);
+}

@@ -1,0 +1,37 @@
+section {
+  width: 100%;
+  padding: calc(var(--spacing) * 5) 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: var(--spacing);
+  margin-inline-start: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  dl {
+    display: grid;
+    grid-template: auto/auto 1fr;
+    grid-gap: var(--spacing);
+    gap: var(--spacing);
+  }
+
+  dt {
+    text-align: right;
+  }
+
+  dt:after {
+    content: ":";
+  }
+
+  dd {
+    margin-bottom: 0;
+  }
+}

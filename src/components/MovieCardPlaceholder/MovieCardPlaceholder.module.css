@@ -1,0 +1,42 @@
+.root {
+  --columns: 1;
+  perspective: 800px;
+  width: calc(
+    100% / var(--columns) - var(--spacing) * 2 * (var(--columns) - 1)
+  );
+  min-height: 507px;
+  border-radius: var(--borderRadius);
+  background: var(--darkGray);
+}
+
+@media (min-width: 425px) {
+  .root {
+    --columns: 2;
+  }
+}
+
+@media (min-width: 820px) {
+  .root {
+    --columns: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .root {
+    --columns: 4;
+  }
+}
+
+@media (min-width: 1600px) {
+  .root {
+    --columns: 5;
+  }
+}
+
+.placeholder {
+  aspect-ratio: 0.66667;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}

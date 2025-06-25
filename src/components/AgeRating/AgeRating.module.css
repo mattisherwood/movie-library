@@ -1,0 +1,6 @@
+.fallbackPlainText {
+  border: solid 1px;
+  padding: var(--spacing);
+  border-radius: var(--borderRadius);
+  white-space: nowrap;
+}
