@@ -9,6 +9,6 @@ type Props = {
 
 export const MovieCardPlaceholder = ({ className }: Props) => (
   <div className={clsx(classes.root, className)}>
-    <div className={classes.placeholder} />
+    <div className={classes.image} />
   </div>
 )

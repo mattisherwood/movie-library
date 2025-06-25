@@ -33,10 +33,11 @@
   }
 }
 
-.placeholder {
+.image {
   aspect-ratio: 0.66667;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  margin-bottom: calc(var(--spacing) * 7.5); /* 60px */
 }

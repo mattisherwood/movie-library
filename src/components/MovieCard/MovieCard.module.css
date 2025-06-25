@@ -77,6 +77,8 @@
   height: auto;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   transition: opacity 1s ease;
+  object-fit: cover;
+  aspect-ratio: 0.66667;
 }
 
 .card:hover {
