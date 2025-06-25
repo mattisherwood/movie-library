@@ -12,7 +12,8 @@ type Props = {
   year: string
   poster?: string
   type: string
-  isLarge?: boolean
+  large?: boolean
+  priority?: boolean
   disableLink?: boolean
   className?: string
 }
@@ -23,7 +24,8 @@ export const MovieCard = ({
   year,
   poster,
   type,
-  isLarge,
+  large,
+  priority,
   disableLink,
   className,
 }: Props) => {
@@ -32,7 +34,7 @@ export const MovieCard = ({
     ("ontouchstart" in window || navigator.maxTouchPoints > 0)
 
   return (
-    <div className={clsx(classes.root, isLarge && classes.large, className)}>
+    <div className={clsx(classes.root, large && classes.large, className)}>
       <div
         className={classes.card}
         onMouseMove={(e) => {
@@ -65,6 +67,7 @@ export const MovieCard = ({
               width='378'
               height='567'
               className={classes.image}
+              priority={priority}
             />
           ) : (
             <div className={classes.placeholder} />

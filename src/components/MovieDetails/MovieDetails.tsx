@@ -48,7 +48,8 @@ export const MovieDetails = ({ movie }: Props) => {
           imdbID={movie.imdbID}
           poster={movie.Poster !== "N/A" ? movie.Poster : undefined}
           type={movie.Type}
-          isLarge
+          large
+          priority
           disableLink
           className={classes.poster}
         />
