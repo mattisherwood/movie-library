@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <img src="src/app/favicon.ico" alt="Alt text" width="24" height="24" /> Movie Library
 
-## Getting Started
+This is a technical exercise creating a web app for browsing and rating movies based on the [Open Movie Database (OMDb) API](https://www.omdbapi.com/).
 
-First, run the development server:
+## Viewing the site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Simply visit **[best-movie-library.vercel.app](https://best-movie-library.vercel.app)** to see the site in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You will need an API key for the OMDb API, which you can easily do by following these steps:
 
-## Learn More
+1. Fill in [this form](https://www.omdbapi.com/apikey.aspx). (A free account is fine)
 
-To learn more about Next.js, take a look at the following resources:
+2. Click on the emailed link to activate the key.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repo.
 
-## Deploy on Vercel
+2. Create a `.env` file in the root of the repository with the key you obtained (& activated) from OMDb.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```env
+   OMDB_API_KEY=XXXXXXXX
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Install the packages.
+
+   ```bash
+   npm i
+   ```
+
+4. Run the development server.
+
+   ```bash
+    npm run dev
+   ```
+
+5. Open [localhost:3000](http://localhost:3000) with your browser to see the result.
+
+6. You can start editing the site by modifying files within `src/app` or the components within `src/components`. The site will auto-update in the browser as you edit the files.
+
+## Future Plans
+
+I've got a quick MVP up and running, but would like to flesh it out with the following:
+
+1. Adding a back button.
+
+2. Adding a version that runs on Tailwind.
+
+3. Adding unit tests.
+
+4. Adding Storybook stories.
+
+5. Storing the search and filters in the URL to enable better navigation.
+
+6. Linking up the extra search input in the header. (Dependant on task 4)
