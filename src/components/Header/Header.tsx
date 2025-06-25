@@ -12,6 +12,7 @@ export const Header = () => (
           src='/icon0.svg'
           width='40'
           height='40'
+          priority
         />
         Movie Library
       </Link>
