@@ -9,8 +9,7 @@
   padding: 20px;
   min-height: 300px;
   transition: min-height 0.6s cubic-bezier(0.5, 0, 0.2, 1);
-  background: url("https://c.pxhere.com/photos/07/1a/bokeh_effect_green_texture_round_light_dark_background-1223685.jpg!d")
-    no-repeat center center;
+  background: url("/bokeh-background.jpg") no-repeat center center;
   background-size: cover;
   z-index: 1;
 }
