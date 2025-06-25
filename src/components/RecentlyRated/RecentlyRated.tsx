@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Carousel } from "../Carousel/Carousel"
 import { Container } from "../Container/Container"
 import { FetchedMovieCard } from "../FetchedMovieCard/FetchedMovieCard"
 import classes from "./RecentlyRated.module.css"
@@ -22,16 +23,16 @@ export const RecentlyRated = () => {
     setRecentlyRatedMovies(ids)
   }, [])
 
+  if (recentlyRatedMovies.length === 0) return null
+
   return (
     <Container className={classes.root}>
-      <h2 className={classes.title}>Recently Rated</h2>
-      <div className={classes.list}>
-        {/* Placeholder for movie items */}
-
+      <h2>Recently Rated</h2>
+      <Carousel counteractGutter>
         {recentlyRatedMovies.map((imdbID) => (
           <FetchedMovieCard imdbID={imdbID} key={imdbID} />
         ))}
-      </div>
+      </Carousel>
     </Container>
   )
 }

@@ -4,7 +4,7 @@
 }
 
 .slides {
-  --scrollbar-margin: calc(var(--spacing) * 2);
+  --scrollbarMargin: 15vw;
   display: flex;
   gap: var(--spacing);
   padding: calc(var(--spacing) * 2) var(--gutter);
@@ -18,28 +18,30 @@
 
 .slides::-webkit-scrollbar {
   display: block;
-  width: 4px;
-  height: var(--scrollbar-margin), calc(var(--spacing) * 5);
+  /* width: 40px; */
+  /* height: var(--scrollbarMargin), calc(var(--spacing) * 10); */
   overflow: auto;
   cursor: grab;
 }
 
 .slides::-webkit-scrollbar-thumb {
-  --scrollbar-mask: 6px solid transparent;
+  --scrollbar-mask: 2px solid transparent;
   --scrollbar-thickness: 4px;
-  background-color: var(--primary);
+  background-color: var(--gray);
   background-clip: content-box;
   border-bottom: var(--scrollbar-mask);
   border-top: var(--scrollbar-mask);
+  border-radius: 99px;
 }
 
 .slides::-webkit-scrollbar-track {
-  --scrollbar-mask: 6px solid transparent;
+  --scrollbar-mask: 4px solid transparent;
   --scrollbar-thickness: 4px;
-  margin: var(--scrollbar-margin);
-  background-clip: content-blox;
-  background-color: var(--gray);
+  margin: var(--scrollbarMargin);
+  background-clip: content-box;
+  background-color: rgba(var(--gray-rgb), 0.3);
   border: var(--scrollbar-mask);
+  border-radius: 99px;
 }
 
 .slides > * {
@@ -61,9 +63,15 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .slides {
+    --scrollbarMargin: 25vw;
+  }
+}
+
 @supports (not (selector(::-webkit-scrollbar))) {
   .slides {
-    scrollbar-color: var(--primary) var(--gray);
+    scrollbar-color: var(--grey) var(--darkGray);
     scrollbar-width: thin;
   }
 }

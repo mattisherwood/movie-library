@@ -57,24 +57,26 @@ export const RelatedMovies = ({ searchTerm, currentMovie }: Props) => {
   if ((resultsToShow.length === 0 && !loading) || error) return null
 
   return (
-    <Container className={classes.root}>
-      <h2>You may also like</h2>
-      <Carousel counteractGutter>
-        {loading
-          ? Array(10)
-              .fill(0)
-              .map((_, index) => <MovieCardPlaceholder key={index} />)
-          : resultsToShow.map((movie) => (
-              <MovieCard
-                title={movie.Title}
-                year={movie.Year}
-                imdbID={movie.imdbID}
-                poster={movie.Poster !== "N/A" ? movie.Poster : undefined}
-                type={movie.Type}
-                key={movie.imdbID}
-              />
-            ))}
-      </Carousel>
-    </Container>
+    <div className={classes.root}>
+      <Container className={classes.container}>
+        <h2>Related Movies</h2>
+        <Carousel counteractGutter>
+          {loading
+            ? Array(10)
+                .fill(0)
+                .map((_, index) => <MovieCardPlaceholder key={index} />)
+            : resultsToShow.map((movie) => (
+                <MovieCard
+                  title={movie.Title}
+                  year={movie.Year}
+                  imdbID={movie.imdbID}
+                  poster={movie.Poster !== "N/A" ? movie.Poster : undefined}
+                  type={movie.Type}
+                  key={movie.imdbID}
+                />
+              ))}
+        </Carousel>
+      </Container>
+    </div>
   )
 }
