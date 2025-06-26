@@ -29,3 +29,19 @@ a:active {
 hr {
   opacity: 0.5;
 }
+
+/* Animation for the bokeh effect will be disabled if the */
+/* user 'prefers reduced motion in their browser settings */
+@media (prefers-reduced-motion: no-preference) {
+  .bokeh {
+    animation-name: move;
+    animation-duration: 24s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
