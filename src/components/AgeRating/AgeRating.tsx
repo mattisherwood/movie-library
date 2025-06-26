@@ -98,7 +98,7 @@ export const AgeRating = ({ ageRating }: Props) => {
       )
     case "12":
       return (
-        <svg viewBox='0 0 80 80'>
+        <svg viewBox='0 0 80 80' width='40'>
           <defs>
             <path id='rating-12_svg__a' d='M0 0h80v79.999H.001z'></path>
           </defs>
@@ -128,7 +128,7 @@ export const AgeRating = ({ ageRating }: Props) => {
       )
     case "15":
       return (
-        <svg viewBox='0 0 80 80'>
+        <svg viewBox='0 0 80 80' width='40'>
           <defs>
             <path id='rating-15_svg__a' d='M.001 0H80v79.999H.001z'></path>
           </defs>
@@ -159,7 +159,7 @@ export const AgeRating = ({ ageRating }: Props) => {
 
     case "18":
       return (
-        <svg viewBox='0 0 80 80'>
+        <svg viewBox='0 0 80 80' width='40'>
           <defs>
             <path id='rating-18_svg__a' d='M0 0h80v79.999H0z'></path>
           </defs>
@@ -189,7 +189,7 @@ export const AgeRating = ({ ageRating }: Props) => {
       )
     case "R18":
       return (
-        <svg viewBox='0 0 80 80' fill='none'>
+        <svg viewBox='0 0 80 80' width='40'>
           <path
             fillRule='evenodd'
             clip-rule='evenodd'

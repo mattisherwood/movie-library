@@ -12,7 +12,6 @@
   user-select: none;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding: var(--gutter);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -55,6 +54,7 @@
 
 .counteractGutter .slides {
   padding-inline: var(--gutter);
+  scroll-padding: var(--gutter);
 }
 
 @media (min-width: 600px) {
