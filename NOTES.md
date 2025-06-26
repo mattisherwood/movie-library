@@ -54,3 +54,9 @@ I've decided to plan this a separate step, as I'm interested to see the differen
 ## Stage 7: Storybook & Unit Tests (2hr & 2hr)
 
 I might do these earlier, but I appreciate it's not an explicitly essential part of the challenge, so hence doing it after the MVP launch.
+
+## Other Notes on Working Practices
+
+I would usually work in PRs, tickets and sprint cycles, but seeing as this was a smaller quick single-sprint dash with just me I thought it best to just keep it simple.
+
+There's the obvious demo Friday afternoon (27th June 2025) and I'll do a retrospective afterwards to see what I can learn from it.
