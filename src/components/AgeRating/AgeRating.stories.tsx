@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs"
 import { AgeRating } from "./AgeRating"
 
 const meta: Meta<typeof AgeRating> = {
-  title: "AgeRating",
+  title: "Atoms/AgeRating",
   component: AgeRating,
   tags: ["autodocs"],
 }

@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/nextjs"
 import { Container } from "../Container/Container"
-import { Carousel } from "./Carousel"
+import { Carousel as CarouselComponent } from "./Carousel"
 
-type ComponentProps = Parameters<typeof Carousel>[0]
+type ComponentProps = Parameters<typeof CarouselComponent>[0]
 
 const meta: Meta<ComponentProps & { slideCount: number }> = {
-  title: "Carousel",
-  component: Carousel,
+  title: "Molecules/Carousel",
+  component: CarouselComponent,
   tags: ["autodocs"],
   argTypes: {
     counteractGutter: {
@@ -33,7 +33,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
+export const Carousel: Story = {
   args: {
     counteractGutter: true,
     slideCount: 6,
@@ -41,7 +41,7 @@ export const Default: Story = {
   render: (args) => (
     <div style={{ paddingBlock: "calc(var(--spacing) * 4)" }}>
       <Container>
-        <Carousel {...args}>
+        <CarouselComponent {...args}>
           {Array.from({ length: args.slideCount }, (_, index) => (
             <div
               key={index}
@@ -62,7 +62,7 @@ export const Default: Story = {
               Slide {index + 1}
             </div>
           ))}
-        </Carousel>
+        </CarouselComponent>
       </Container>
     </div>
   ),
