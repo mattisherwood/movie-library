@@ -1,4 +1,4 @@
-import { MovieDetails } from "@/components/MovieDetails/MovieDetails"
+import { MovieDetailPage } from "@/components/MovieDetailPage/MovieDetailPage"
 import { headers } from "next/headers"
 
 type Props = {
@@ -19,7 +19,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
-      <MovieDetails movie={movie} />
+      <MovieDetailPage movie={movie} />
     </main>
   )
 }
