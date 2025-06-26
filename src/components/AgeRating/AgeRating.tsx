@@ -1,5 +1,3 @@
-import classes from "./AgeRating.module.css"
-
 type Props = {
   ageRating: string
 }
@@ -227,6 +225,10 @@ export const AgeRating = ({ ageRating }: Props) => {
     case "N/A":
       return null
     default:
-      return <span className={classes.fallbackPlainText}>{ageRating}</span>
+      return (
+        <span className='flex min-w-fit items-center justify-center border border-solid p-1 rounded-md whitespace-nowrap'>
+          {ageRating}
+        </span>
+      )
   }
 }
