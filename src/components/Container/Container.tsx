@@ -1,6 +1,5 @@
 import clsx from "clsx"
 import { ReactNode } from "react"
-import classes from "./Container.module.css"
 
 type Props = {
   children: ReactNode
@@ -9,7 +8,14 @@ type Props = {
 }
 
 export const Container = ({ children, size = "large", className }: Props) => (
-  <div className={clsx(classes.container, classes[size], className)}>
+  <div
+    className={clsx(
+      "w-full max-w-[1200px] mx-auto px-2 sm:px-4",
+      size === "small" && "max-w-[800px]",
+      size === "large" && "max-w-[1600px]",
+      className
+    )}
+  >
     {children}
   </div>
 )
