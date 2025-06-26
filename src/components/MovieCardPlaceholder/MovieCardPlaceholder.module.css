@@ -4,7 +4,6 @@
   width: calc(
     100% / var(--columns) - var(--spacing) * 2 * (var(--columns) - 1)
   );
-  min-height: 507px;
   border-radius: var(--borderRadius);
   background: var(--darkGray);
 }
