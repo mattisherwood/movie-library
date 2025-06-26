@@ -1,6 +1,7 @@
 "use client"
 
 import clsx from "clsx"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Filters } from "../Filters/Filters"
 import { Results } from "../Results/Results"
@@ -8,26 +9,39 @@ import { Search } from "../Search/Search"
 import classes from "./MovieFinder.module.css"
 
 export const MovieFinder = () => {
-  const [search, setSearch] = useState<string>("")
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const [search, setSearch] = useState<string>(searchParams.get("s") || "")
   const [results, setResults] = useState([])
   const [totalResults, setTotalResults] = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(
+    searchParams.get("p") ? Number(searchParams.get("p")) : 1
+  )
   const [showFilters, setShowFilters] = useState(false)
-  const [filterType, setFilterType] = useState<"movie" | "series" | "episode">()
-  const [filterYear, setFilterYear] = useState<number | undefined>()
+  const [filterType, setFilterType] = useState<
+    "movie" | "series" | "episode" | undefined
+  >((searchParams.get("type") as "movie" | "series" | "episode") || undefined)
+  const [filterYear, setFilterYear] = useState<number | undefined>(
+    searchParams.get("year") ? Number(searchParams.get("year")) : undefined
+  )
   const totalPages = Math.ceil(totalResults / 10)
   const activeFilterCount = Number(!!filterYear) + Number(!!filterType)
 
-  const updateFilterType = (type?: "movie" | "series" | "episode") => {
-    setFilterType(type)
-    setPage(1) // Reset to first page when filter changes
-  }
-  const updateFilterYear = (year?: number) => {
-    setFilterYear(year)
-    setPage(1) // Reset to first page when filter changes
-  }
+  // Update URL when state changes
+  useEffect(() => {
+    const params = new URLSearchParams()
+    if (search) params.set("s", search)
+    if (filterType) params.set("type", filterType)
+    if (filterYear) params.set("year", String(filterYear))
+    if (page > 1) params.set("p", String(page))
+    else params.delete("p")
+
+    router.replace(`?${params.toString()}`, { scroll: false })
+  }, [search, filterType, filterYear, page])
+
   useEffect(() => {
     if (!search) {
       setResults([])
@@ -57,6 +71,15 @@ export const MovieFinder = () => {
       .catch(() => setError("Failed to fetch results."))
       .finally(() => setLoading(false))
   }, [search, page, filterType, filterYear])
+
+  const updateFilterType = (type?: "movie" | "series" | "episode") => {
+    setFilterType(type)
+    setPage(1) // Reset to first page when filter changes
+  }
+  const updateFilterYear = (year?: number) => {
+    setFilterYear(year)
+    setPage(1) // Reset to first page when filter changes
+  }
 
   return (
     <div className={classes.root}>
