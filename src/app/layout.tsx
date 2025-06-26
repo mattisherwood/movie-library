@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer/Footer"
 import { Header } from "@/components/Header/Header"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Noto_Sans } from "next/font/google"
 import "../styles/globals.css"
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   )
