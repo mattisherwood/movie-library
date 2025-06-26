@@ -62,16 +62,14 @@ You can start editing the site by modifying files within the `src/app` directory
 
 I've got an MVP up and running, but would like to flesh it out with the following:
 
-1. Adding debounce to the search input.
+1. Adding a back button.
 
-2. Adding a back button.
+2. Migrating more components on the Tailwind branch.
 
-3. Migrating more components on the Tailwind branch.
+3. Adding unit tests.
 
-4. Adding unit tests.
+4. Giving more components Storybook stories.
 
-5. Giving more components Storybook stories.
+5. Storing the search and filters in the URL to enable better navigation.
 
-6. Storing the search and filters in the URL to enable better navigation.
-
-7. Linking up the extra search input in the header. (Dependant on task 4)
+6. Linking up the extra search input in the header. (Dependant on task 4)
