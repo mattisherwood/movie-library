@@ -4,13 +4,15 @@ This is a technical exercise creating a web app for browsing and rating movies b
 
 ## Viewing the site
 
-Simply visit **[best-movie-library.vercel.app](https://best-movie-library.vercel.app)** to see the site in action.
+Simply visit **[best-movie-library.vercel.app](https://best-movie-library.vercel.app)** to see the latest production copy of the site in action.
+
+Or visit **[best-movie-library-storybook.vercel.app](https://best-movie-library-storybook.vercel.app)** to view the Storybook for the latest production site.
 
 ## Local Development
 
 ### Prerequisites
 
-You will need an API key for the OMDb API, which you can easily do by following these steps:
+As well as having node (ideally v20) installed on your machine, you will also need an API key for the OMDb API, which you can easily do by following these steps:
 
 1. Fill in [this form](https://www.omdbapi.com/apikey.aspx). (A free account is fine)
 
@@ -32,28 +34,44 @@ You will need an API key for the OMDb API, which you can easily do by following 
    npm i
    ```
 
+### Running the site locally
+
 4. Run the development server.
 
    ```bash
     npm run dev
    ```
 
-5. Open [localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [localhost:3000](http://localhost:3000) with your browser to see the result.\
+   _NB: If port 3000 is already in use, it will increase to 3001 etc. until it finds one available._
 
-6. You can start editing the site by modifying files within `src/app` or the components within `src/components`. The site will auto-update in the browser as you edit the files.
+### Running Storybook locally
+
+6. Run the Storybook server.
+
+   ```bash
+    npm run storybook
+   ```
+
+7. Open [localhost:6006](http://localhost:6006) with your browser to see the result.\
+   _NB: If port 6006 is already in use, it will increase to 6007 etc. until it finds one available._
+
+You can start editing the site by modifying files within the `src/app` directory or the components within the `src/components` directory. Both the site and storybook instances will auto-update in the browser as you edit the files.
 
 ## Future Plans
 
-I've got a quick MVP up and running, but would like to flesh it out with the following:
+I've got an MVP up and running, but would like to flesh it out with the following:
 
-1. Adding a back button.
+1. Adding debounce to the search input.
 
-2. Adding a version that runs on Tailwind.
+2. Adding a back button.
 
-3. Adding unit tests.
+3. Migrating more components on the Tailwind branch.
 
-4. Adding Storybook stories.
+4. Adding unit tests.
 
-5. Storing the search and filters in the URL to enable better navigation.
+5. Giving more components Storybook stories.
 
-6. Linking up the extra search input in the header. (Dependant on task 4)
+6. Storing the search and filters in the URL to enable better navigation.
+
+7. Linking up the extra search input in the header. (Dependant on task 4)
