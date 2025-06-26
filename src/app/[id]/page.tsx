@@ -1,6 +1,5 @@
 import { MovieDetails } from "@/components/MovieDetails/MovieDetails"
 import { headers } from "next/headers"
-import classes from "../page.module.css"
 
 type Props = {
   params: Promise<{ id: string }>
@@ -19,8 +18,8 @@ export default async function Home({ params }: Props) {
   const movie = await res.json()
 
   return (
-    <div className={classes.root}>
+    <main>
       <MovieDetails movie={movie} />
-    </div>
+    </main>
   )
 }
