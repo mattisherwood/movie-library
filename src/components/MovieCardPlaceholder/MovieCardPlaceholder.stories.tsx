@@ -3,7 +3,7 @@ import { Container } from "../Container/Container"
 import { MovieCardPlaceholder } from "./MovieCardPlaceholder"
 
 const meta: Meta<typeof MovieCardPlaceholder> = {
-  title: "MovieCardPlaceholder",
+  title: "Molecules/MovieCardPlaceholder",
   component: MovieCardPlaceholder,
   tags: ["autodocs"],
   argTypes: {

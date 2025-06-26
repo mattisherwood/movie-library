@@ -3,7 +3,7 @@ import { howToTrainYourDragon } from "../../fixtures/filmDetails"
 import { MovieCard } from "./MovieCard"
 
 const meta: Meta<typeof MovieCard> = {
-  title: "MovieCard",
+  title: "Molecules/MovieCard",
   component: MovieCard,
   tags: ["autodocs"],
   argTypes: {
