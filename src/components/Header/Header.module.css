@@ -35,47 +35,6 @@
   background: rgba(var(--white-rgb), 0.05);
 }
 
-.search {
-  display: block;
-  width: 43px;
-  transition: all 0.3s ease;
-  max-width: 250px;
-  display: flex;
-}
-
-.search::before {
-  content: "\e986";
-  position: absolute;
-  pointer-events: none;
-  padding: calc(var(--spacing) * 1.5);
-  font-size: 16px;
-
-  font-family: "icons" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.search:focus-within {
-  flex-grow: 1;
-}
-
-.input {
-  width: 100%;
-  padding: var(--spacing);
-  border-radius: 40px;
-  border: solid 1px var(--darkGray);
-  padding: 10px 10px 10px 35px;
-  font-size: inherit;
-  background: rgba(var(--white-rgb), 0.1);
-}
-
 @media (min-width: 600px) {
   .title {
     margin-inline: calc(var(--spacing) * -4);

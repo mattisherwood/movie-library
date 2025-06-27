@@ -12,6 +12,7 @@ export const MovieFinder = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
 
+  // States
   const [search, setSearch] = useState<string>(searchParams.get("s") || "")
   const [results, setResults] = useState([])
   const [totalResults, setTotalResults] = useState(0)
@@ -42,6 +43,25 @@ export const MovieFinder = () => {
     router.replace(`?${params.toString()}`, { scroll: false })
   }, [search, filterType, filterYear, page])
 
+  // Update state when URL search params change
+  useEffect(() => {
+    const newSearch = searchParams.get("s") || ""
+    const newType = searchParams.get("type") as
+      | "movie"
+      | "series"
+      | "episode"
+      | undefined
+    const newYear = searchParams.get("year")
+      ? Number(searchParams.get("year"))
+      : undefined
+    const newPage = searchParams.get("p") ? Number(searchParams.get("p")) : 1
+    setSearch(newSearch)
+    setFilterType(newType)
+    setFilterYear(newYear)
+    setPage(newPage)
+  }, [searchParams])
+
+  // Update results when search, page, or filters change
   useEffect(() => {
     if (!search) {
       setResults([])

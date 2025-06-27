@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Container } from "../Container/Container"
+import { SecondarySearch } from "../SecondarySearch/SecondarySearch"
 import classes from "./Header.module.css"
 
 export const Header = () => (
@@ -16,9 +17,7 @@ export const Header = () => (
         />
         Movie Library
       </Link>
-      <div className={classes.search}>
-        <input type='text' className={classes.input} placeholder='Search...' />
-      </div>
+      <SecondarySearch />
     </Container>
   </header>
 )
