@@ -64,12 +64,10 @@ I've got an MVP up and running, but would like to flesh it out with the followin
 
 1. Adding a back button.
 
-2. Migrating more components on the Tailwind branch.
+2. Adding unit tests.
 
-3. Adding unit tests.
+3. Migrating more components fully onto Tailwind (Tailwind branch).
 
 4. Giving more components Storybook stories.
 
-5. Storing the search and filters in the URL to enable better navigation.
-
-6. Linking up the extra search input in the header. (Dependant on task 4)
+5. Adding more initial content to the homepage.
